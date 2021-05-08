@@ -1,0 +1,24 @@
+[submodule "src/ros/aliveos_ros_meta"]
+	path = src/ros/aliveos_ros_meta
+	url = git@github.com:an-dr/aliveos_ros_meta.git
+[submodule "src/ros/aliveos_app"]
+	path = src/ros/aliveos_app
+	url = git@github.com:an-dr/aliveos_app.git
+[submodule "src/ros/aliveos_demo"]
+	path = src/ros/aliveos_demo
+	url = git@github.com:an-dr/aliveos_demo.git
+[submodule "src/ros/aliveos_hw"]
+	path = src/ros/aliveos_hw
+	url = git@github.com:an-dr/aliveos_hw.git
+[submodule "src/ros/aliveos_launch"]
+	path = src/ros/aliveos_launch
+	url = git@github.com:an-dr/aliveos_launch.git
+[submodule "src/ros/aliveos_middle"]
+	path = src/ros/aliveos_middle
+	url = git@github.com:an-dr/aliveos_middle.git
+[submodule "src/ros/aliveos_msgs"]
+	path = src/ros/aliveos_msgs
+	url = git@github.com:an-dr/aliveos_msgs.git
+[submodule "src/ros/aliveos_py"]
+	path = src/ros/aliveos_py
+	url = git@github.com:an-dr/aliveos_py.git
