@@ -1,4 +1,4 @@
-name: Update
+name: Submodules
 on:
   push:
     branches:

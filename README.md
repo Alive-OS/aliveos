@@ -1,5 +1,7 @@
 # [<img alt="AliveOS" src="assets/logo.svg" width="300">](https://github.com/an-dr/aliveos)
 
+[![Update](https://github.com/an-dr/aliveos/actions/workflows/main.yml/badge.svg)](https://github.com/an-dr/aliveos/actions/workflows/main.yml)
+
 OS leveraging animal mind concepts to improve the UX and survivability of automated electronics.
 
 ## Sub-projects
