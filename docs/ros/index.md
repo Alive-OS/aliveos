@@ -6,8 +6,9 @@ This is a metapackage for ROS Noetic
 
 ## Dependencies
 
-- [Python 3](https://www.python.org/)
-- [ROS Noetic](http://wiki.ros.org/noetic)
+- [ROS Noetic](http://wiki.ros.org/noetic/Installation)
+- [Python 3](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+- [vcstools](https://github.com/dirk-thomas/vcstool#how-to-install-vcstool)
 
 ## ROS packages
 
@@ -24,17 +25,43 @@ The operating system consists of following packages:
 
 ## Installation
 
-- Create a catkin workspace
-- In the `src` directory of the workspace:
-    - clone the repository `git clone https://github.com/an-dr/aliveos_ros_meta.git`
-    - or add it as a submodule `git add submodule https://github.com/an-dr/aliveos_ros_meta.git`
-- Execute the command bellow to download other packages of the AliveOS stack
+### 1. Create a catkin workspace
 
 ```bash
-vcs import --recursive --input ./aliveos_ros_meta/aliveos.rosinstall .
+mkdir -p ./robot_ws/src
+cd ./robot_ws
+catkin_make
 ```
 
-- (Optionally) add all packages to the `.gitignore` file:
+### 2. Download the meta-package
+
+Clone the repository
+
+```bash
+git clone https://github.com/an-dr/aliveos_ros_meta.git ./src/aliveos_ros_meta
+```
+
+or add it as a submodule
+
+```bash
+git add submodule https://github.com/an-dr/aliveos_ros_meta.git ./src/aliveos_ros_meta
+```
+
+### 3. Download the AlivaOS package stack
+
+Execute the command bellow to download all packages. For the stable version:
+
+```bash
+vcs import --recursive --input ./src/aliveos_ros_meta/aliveos_release.rosinstall ./src
+```
+
+Or for the latest version:
+
+```bash
+vcs import --recursive --input ./src/aliveos_ros_meta/aliveos_latest.rosinstall ./src
+```
+
+### 4. (Optionally) add all packages to the `.gitignore` file
 
 ```txt
 # aliveos deps
@@ -45,6 +72,26 @@ src/aliveos_launch
 src/aliveos_middle
 src/aliveos_msgs
 src/aliveos_py
+```
+
+## Start demo
+
+### 1. Build the workspace
+
+```bash
+catkin_make
+```
+
+### 2. Source the environment
+
+```bash
+. ./devel/setup.bash
+```
+
+### 3. Launch the demo package
+
+```bash
+roslaunch aliveos_demo simple_demo.launch
 ```
 
 ## Structure
