@@ -10,6 +10,11 @@
 #
 # *************************************************************************
 
-docker build . -t aliveos:latest
-# docker rm aliveos_dev_container
-docker run --rm -p 2222:22 --name aliveos_dev_container -it aliveos:latest 
+
+$PRIVATE_KEY = "$PSScriptRoot/docker/aliveos_container_rsa"
+$PUBLIC_KEY = "$PSScriptRoot/docker/aliveos_container_rsa.pub"
+$SSH_DIR = "~/.ssh"
+
+cp $PRIVATE_KEY $SSH_DIR -Force
+$ip = $(docker inspect -f "{{ .NetworkSettings.IPAddress }}" aliveos_dev_container)
+code --file-uri=vscode-remote://ssh-remote+aliveos@localhost:2222/aliveos_ws/
