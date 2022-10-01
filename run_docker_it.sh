@@ -17,4 +17,8 @@ function log { echo "- $1 [$(basename "$0")]" ;}
 # -------------------------------------------------------------------------
 
 docker build . -t aliveos:latest
-docker run -it aliveos:latest
+
+docker run --rm -p 2222:22 \
+           --name aliveos_dev_container \
+           -v $SCRIPT_ROOT/src:/home/aliveos/aliveos_ws/src \
+           -it aliveos:latest
