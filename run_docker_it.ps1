@@ -12,4 +12,7 @@
 
 docker build . -t aliveos:latest
 # docker rm aliveos_dev_container
-docker run --rm -p 2222:22 --name aliveos_dev_container -it aliveos:latest 
+docker run --rm -p 2222:22 `
+           --name aliveos_dev_container `
+           -v $PSScriptRoot/src:/home/aliveos/aliveos_ws/src `
+           -it aliveos:latest `
